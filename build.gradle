@@ -36,10 +36,12 @@ bootRun {
 repositories {
 	jcenter()
 	mavenCentral()
-	mavenLocal()
-	maven { url "lib/" }
+	// mavenLocal()
 	maven{url "http://jasperreports.sourceforge.net/maven2/"}
 	maven{url "http://jaspersoft.artifactoryonline.com/jaspersoft/third-party-ce-artifacts/"}
+	flatDir {
+		dirs("lib")
+	}
 }
 
 configurations {
