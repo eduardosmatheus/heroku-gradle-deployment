@@ -16,7 +16,7 @@ bin
 !.vscode/launch.json
 !.vscode/extensions.json
 ### Gradle template
-gradle
+#gradle
 .gradle
 /build/
 
@@ -41,7 +41,7 @@ gradle-app.setting
 .jasper
 bin/
 build/
-gradle/
+#gradle/
 orion-server.iml
 out/
 
