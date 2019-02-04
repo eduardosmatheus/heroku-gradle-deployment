@@ -117,10 +117,6 @@ task stage(type: Copy, dependsOn: [clean, build]) {
 
 stage.mustRunAfter clean
 
-clean << {
-    project.file('server.jar').delete()
-}
-
 task copyToLib(type: Copy) {
     into "$buildDir/lib"
     from(configurations.compile)
