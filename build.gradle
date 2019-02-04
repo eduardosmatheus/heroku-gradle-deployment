@@ -107,9 +107,19 @@ task compileJasperReports {
     }
 }
 
-task stage(dependsOn: ['build', 'clean'])
+task stage(type: Copy, dependsOn: [clean, build]) {
+    from jar.archivePath
+    into project.rootDir 
+    rename {
+        'server.jar'
+    }
+}
 
-build.mustRunAfter clean
+stage.mustRunAfter clean
+
+clean << {
+    project.file('server.jar').delete()
+}
 
 task copyToLib(type: Copy) {
     into "$buildDir/lib"
