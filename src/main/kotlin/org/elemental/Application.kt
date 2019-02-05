@@ -16,9 +16,5 @@ class Application : SpringBootServletInitializer() {
 }
 
 fun main(args: Array<String>) {
-
-    System.getenv().forEach {
-        (k, v) -> println("$k - $v")
-    }
     SpringApplication.run(Application::class.java, *args)
 }

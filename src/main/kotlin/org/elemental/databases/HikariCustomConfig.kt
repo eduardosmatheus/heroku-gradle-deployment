@@ -13,8 +13,7 @@ object HikariCustomConfig {
 
     private fun postgreSqlTemplate(): HikariDataSource {
         val hikariDS = HikariDataSource()
-        hikariDS.dataSourceClassName = "org.postgresql.ds.PGSimpleDataSource"
-        hikariDS.jdbcUrl = System.getenv("DATABASE_URL")
+        hikariDS.jdbcUrl = System.getenv("SPRING_DATASOURCE_URL")
         return hikariDS
     }
 }
